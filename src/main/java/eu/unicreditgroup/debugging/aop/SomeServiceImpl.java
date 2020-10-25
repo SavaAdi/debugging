@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 public class SomeServiceImpl {
 
     @CheckPerformance
-    public String importantMethod() throws InterruptedException {
+    public String importantMethod(String name) throws InterruptedException {
         Thread.sleep(2000);
-
-        return "Done";
+        if (!name.equals("Forbidden")) {
+            return name;
+        } else {
+            throw new RuntimeException("The name is Forbidden...literally");
+        }
     }
 }
