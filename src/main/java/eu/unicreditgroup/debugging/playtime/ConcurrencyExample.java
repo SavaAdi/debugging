@@ -17,8 +17,11 @@ public class ConcurrencyExample {
     }
 
     private static void addIfAbsent(int x) {
-        if (!LIST.contains(x)) {
-            LIST.add(x);
+        synchronized (LIST){
+            if (!LIST.contains(x)) {
+                LIST.add(x);
+            }
         }
+
     }
 }

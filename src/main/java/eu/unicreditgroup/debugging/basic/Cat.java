@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +23,8 @@ public class Cat extends Feline { // <<1.3>>
                 .color(Color.BLACK)
                 .name("Pixie")
                 .build();
+
+
         Cat anotherCat = new Cat();
 
 //        int c = 3 / 0;  // <<1.4>>
@@ -33,9 +37,17 @@ public class Cat extends Feline { // <<1.3>>
 
         anotherCat.play();
         someCat.play();
+        System.out.println(methodA());
         System.out.println(someCat);  // <<1.5>>
         System.out.println(someCat.getName());
         System.out.println(someCat.purr());
+    }
+
+    private static boolean methodA() {
+
+        return false;
+
+
     }
 
     public void play() { // <<1.2>>

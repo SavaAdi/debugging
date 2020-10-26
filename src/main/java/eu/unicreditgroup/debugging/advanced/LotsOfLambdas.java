@@ -12,11 +12,11 @@ public class LotsOfLambdas {
 
     public static void main(String[] args) {
         someLambdaMethod(3).forEach(System.out::println); // <<2.5>>
-        String str = new String("Me and my twin"); // <<2.7>>
+        String str = "Me and my twin"; // <<2.7>>
     }
 
     public static List<Integer> someLambdaMethod(int n) {
-        List<Integer> onlyOddAndGreaterThanN = numbers.stream()  // <<2.6>>
+        List<Integer> onlyOddAndGreaterThanN = numbers.parallelStream()
                 .filter(nr -> nr % 2 != 0)
                 .filter(nr -> nr > n)
                 .distinct()
