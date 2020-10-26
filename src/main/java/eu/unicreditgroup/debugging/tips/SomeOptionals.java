@@ -7,7 +7,7 @@ public class SomeOptionals {
     public static void main(String[] args) {
         Optional<Integer> optionalInteger = Optional.of(1); // = ...
         optionalInteger.orElse(1);
-        optionalInteger.orElseGet(SomeOptionals::computeDefaultInteger);
+        optionalInteger.orElseGet(SomeOptionals::computeDefaultInteger); // <<2.5>>
     }
 
     private static Integer computeDefaultInteger() {

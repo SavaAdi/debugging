@@ -11,11 +11,11 @@ public class CheckNullGetDefault {
 
     public CheckNullGetDefault(String name, String color) {
         this.name = Objects.requireNonNullElseGet(name,() -> "No name");
-        this.color = Objects.requireNonNullElseGet(color, () -> "Nigger");
+        this.color = Objects.requireNonNullElseGet(color, () -> "Some color");
     }
 
     public static void main(String[] args) {
-        String test = "Adi";
+
 
     }
 
