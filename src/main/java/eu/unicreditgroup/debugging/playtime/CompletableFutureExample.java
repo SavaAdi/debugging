@@ -40,8 +40,7 @@ public class CompletableFutureExample {
         List<CompletableFuture<Long>> sums = Arrays.stream(listOfLongs)
                 .map(number -> CompletableFuture.supplyAsync(
                         () -> longMethod(number))).collect(toList());
-//        YOU MUST USE JOIN, OTHERWISE THEY WILL RUN SEQUENTIALLY IF YOU"D USE ONLY THE FIRST ONE
-//        Sucks if you use more threads than you have available
+
         System.out.println(sums.stream().map(CompletableFuture::join).collect(toList()));
         System.out.println(System.currentTimeMillis() - startTime2);
 
